@@ -1,3 +1,5 @@
+# Made by Ewoud Van Vooren on 1/31/25 for Hack Club Neon
+
 import random
 import time
 
@@ -33,7 +35,7 @@ def apply_meteor_shower(bitmap, palette, trail_length=8):
                 if trail_pos is not None:
                     trail_x, trail_y = trail_pos
                     if 0 <= trail_x < width and 0 <= trail_y < height:
-                        bitmap[trail_x + trail_y * width] = 0  # Clear old trail pixel
+                        bitmap[trail_x + trail_y * width] = 0
 
             meteor["x"] += meteor["direction"][0]
             meteor["y"] += meteor["direction"][1]
@@ -67,7 +69,7 @@ SCALE = 1
 bitmap = displayio.Bitmap(display.width // SCALE, display.height // SCALE, 2)
 palette = displayio.Palette(2)
 palette[0] = 0x000000
-palette[1] = 0xC0C0C0  # Grayish white initial color
+palette[1] = 0xC0C0C0
 tg = displayio.TileGrid(bitmap, pixel_shader=palette)
 group = displayio.Group(scale=SCALE)
 group.append(tg)
